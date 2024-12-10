@@ -26,6 +26,7 @@ input[type=text]:focus {
 
 input[type=text]:hover{
   background-color: #aeffe1;
+  border-color: #000000;
   color: rgb(0, 0, 0);
 }
 
