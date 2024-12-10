@@ -42,16 +42,19 @@ input[type=radio]:checked {
 
 textarea:focus {
     background-color: #3CBC8D;
+    border-color: #000000;
     color: white;
 }
 
 textarea:hover {
   background-color: #aeffe1;
+  border-color: #000000;
   color: rgb(0, 0, 0);
 }
 
 textarea:active {
     background-color: #04422b;
+    border-color: #000000;
     color: white;
 }
 
@@ -113,7 +116,7 @@ table {
     text-align: center;
     line-height: 1;
     font-size: 17px;
-    background-color : #ffd4cb;
+    background-color : #ffaf9d;
     padding: 10px;
     outline: none;
     border-radius: 4px;
