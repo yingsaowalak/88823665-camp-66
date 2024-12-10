@@ -9,7 +9,7 @@ body {
 }
   
 h1 {
-    color: #D91656;
+    color: #ff82ac;
     text-align: center;
 }
     
@@ -127,4 +127,7 @@ button:hover {
     background-color: #ff8368;
 }
 
+body {
+  background-image: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif)
+}
 
