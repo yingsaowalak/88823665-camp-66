@@ -31,8 +31,9 @@ input[type=text]:hover{
 }
 
 input[type=text]:active {
-    background-color: #04422b;
-    color: white;
+  background-color: #04422b;
+  border-color: #000000;
+  color: white;
 }
 
 input[type=radio]:checked {
