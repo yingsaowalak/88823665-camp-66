@@ -45,7 +45,7 @@ textarea:focus {
 
 textarea:hover {
   background-color: #aeffe1;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 textarea:active {
