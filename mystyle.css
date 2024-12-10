@@ -19,7 +19,6 @@ h1 {
     align-items: center;
   }
 
-
 input[type=text]:focus {
     background-color: #3CBC8D;
     color: white;
@@ -28,6 +27,10 @@ input[type=text]:focus {
 input[type=text]:active {
     background-color: #04422b;
     color: white;
+}
+
+input[type=radio]:checked {
+  accent-color: #54C392;
 }
 
 textarea:focus {
@@ -39,12 +42,6 @@ textarea:active {
     background-color: #04422b;
     color: white;
 }
-
-input[type=radio]:checked {
-    accent-color: #54C392;
-
-}
-
 
 table {
     background-color: #ffffff;
@@ -114,3 +111,5 @@ button:hover {
     color: #ffffff;
     background-color: #FF8C9E;
 }
+
+
