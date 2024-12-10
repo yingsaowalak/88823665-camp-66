@@ -24,6 +24,11 @@ input[type=text]:focus {
     color: white;
 }
 
+input[type=text]:hover{
+  background-color: #aeffe1;
+  color: rgb(0, 0, 0);
+}
+
 input[type=text]:active {
     background-color: #04422b;
     color: white;
@@ -36,6 +41,11 @@ input[type=radio]:checked {
 textarea:focus {
     background-color: #3CBC8D;
     color: white;
+}
+
+textarea:hover {
+  background-color: #aeffe1;
+  color: white;
 }
 
 textarea:active {
