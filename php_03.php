@@ -9,14 +9,14 @@
             text-align: left;
         }
     </style>
-        </body>
+        <body>
             <title>PHP_03</title>
             <div class="container mt-5">
         <h1>ตารางแม่สูตรคูณ</h1>
         <form action="php_03.php" method="post">
             <div class="mb-3">
                 <label for="inputnum" class="form-label">เลขแม่สูตรคูณ:</label>
-                <input type="input" class="form-control" id="inputnum" name="inputnum" placeholder="กรอกเลข เช่น 2" required>
+                <input type="input" class="form-control" id="inputnum" name="inputnum" placeholder="กรุณากรอก 'ตัวเลข' ที่ต้องการ เช่น 1" required>
             </div>
             <div class="mb-4">
                 <button class="btn btn-success" type="submit">สร้างตารางสูตรคูณ</button>

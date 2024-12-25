@@ -5,6 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
     <body>
+    <title>PHP_02</title>
         <div class ="container mt-5">
             <h1>จำนวน 1 ถึง 100 เป็นเลขคู่ หรือ คี่</h1>
             <?php
