@@ -15,9 +15,7 @@
         h1 {
             color:#F72C5B; 
         }
-        .h2 {
-            color:#3C552D 
-        }
+        
     </style>
         <body>
             <title>PHP_04</title>

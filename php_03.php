@@ -15,10 +15,7 @@
         h1 {
             color:#F72C5B; 
         }
-        .h2 {
-            color:#3C552D 
-        }
-
+        
         .list-group{
             text-align: left;
         }
