@@ -8,7 +8,7 @@
     <div class="container mt-5">
         <h1>email: <?php if (isset($_POST['email'])) { echo $_POST['email']; } ?></h1>
         <h1>detail: <?php echo isset($_REQUEST['detail']) ? $_REQUEST['detail'] : ""; ?></h1>
-        <form method="post" action="index_submit.php">
+        <form method="post" action="http://localhost/88823665-camp-66/index_submit.php">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
