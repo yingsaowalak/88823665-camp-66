@@ -1,83 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PHP TEST</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot; rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js&quot; integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>File index.php</h1>
-        <?php
-        echo "Hello world";
-        echo "<br>";
-        print("Hello world");
-        echo "<br>";
-        print_r("Hello world");
-        echo "<br>";
-        printf("Hello world");
-        echo "<br>";
-        var_dump("Hello world");
-        echo "<br>";
-        $myvar = "Hello world";
-        ?>
-        <h1><?php echo $myvar; ?></h1>
-        <?php
-        echo "<h1>".$myvar."</h1>"
-        ?>
-        <?php
-        $x =1;
-        FUNction myfunction($myparam){
-            // หากมีการกำหนดค่าตัวแปรใหม่ใช้global นำเลขเป็นสตริงทำได้เลย
-            // global $x;
-            $x = "Hello";
-            return $myparam;
-        }
-        echo "<p>".MYFUNCTION("Hello World!")."</p>";
-        ?>
-        <h1><?php echo $x; ?></h1>
-        <?php echo "1"+'1'; // หากใช้ตัวเลขที่เป็นข้อความสามารถบวกลบคูณหารได้เหมือนตัวเลขเลย ?> 
-        <?php
-        $mychar = "a";
-        ?>
-        <h1><?php echo ++$mychar; ?></h1>
-        <?php
-        if(1 == '1'){
-            echo "1 == \"1\"";
-
-        }else
-        if(true){
-            echo "1 != \"1\"";
-        }
-        if(true)
-        echo "true";
-        else
-        if(true)
-        echo "false";
-        $my_arry = array(1,2,3,4,5);
-        // sizeof($my_arry);
-        for($i=0; $i < count($my_arry); $i++){
-            echo $my_arry[$i];
-        }
-        echo "<br>";
-        foreach($my_arry as $index => $value){
-            echo $value;
-
-        }
-        echo "<br>";
-        $my_arry2[] = [1,2,3];
-        $my_arry2[] = 2;
-        $my_arry2[4] = 3;
-        $my_arry2[] = 4;
-        $my_arry2[] = 5;
-        print_r($my_arry2);
-        $my_arry3 = array(1,2,3,"myindex" => 4 ,0 => 9);
-        $my_arry3["myindex"] = 1;
-        print_r($my_arry3);
-        foreach($my_arry as $value){
-            echo $value;
-
-        }
-        ?>
-
+        <div class="container mt-5">
+            <form method="post" action="">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea name="detail" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </body>
-
-
 </html>
