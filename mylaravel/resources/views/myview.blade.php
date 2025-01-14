@@ -26,7 +26,7 @@
         <form action="{{ url('/mycontroller') }}" method="post">
             @csrf
             <div class="mb-3">
-                <label for="myinput" class="form-label">เลขแม่สูตรคูณ:</label>
+                <label for="myinput" class="form-label">กรุณากรอกเลขแม่สูตรคูณ : </label>
                 <input type="text" class="form-control" name="myinput" id="myinput" value="{{ $myinput }}">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -41,7 +41,6 @@
                     @endfor
                 </ul>
             @else
-                <p>กรุณากรอกเลขสำหรับการคำนวณสูตรคูณ</p>
             @endif
         </div>
     </div>
