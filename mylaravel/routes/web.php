@@ -14,6 +14,12 @@ Route::get('/', function () {
 Route::get("/login",[LoginController::class,'index']);
 Route::get("/register",[RegisterController::class,'index']);
 
+// หน้า home
+Route::get('/home', function () {
+    return view('home');
+});
+
+
 // Hello World
 Route::get('/hello', function () {
     return "<h1>Hello World!</h1>";
@@ -21,11 +27,6 @@ Route::get('/hello', function () {
 
 Route::get('/', function () {
     return view ('layouts.default');
-});
-
-// หน้า home
-Route::get('/home', function () {
-    return view('home');
 });
 
 
