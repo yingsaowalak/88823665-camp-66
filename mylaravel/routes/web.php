@@ -19,7 +19,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-
 // Hello World
 Route::get('/hello', function () {
     return "<h1>Hello World!</h1>";
