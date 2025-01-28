@@ -5,16 +5,16 @@ use App\Http\Controllers\MyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
+// หน้าแรก
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/login",
-[LoginController::class,'index']);
+// Login และ Register
+Route::get("/login",[LoginController::class,'index']);
+Route::get("/register",[RegisterController::class,'index']);
 
-Route::get("/register",
-[RegisterController::class,'index']);
-
+// Hello World
 Route::get('/hello', function () {
     return "<h1>Hello World!</h1>";
 });
@@ -23,9 +23,11 @@ Route::get('/', function () {
     return view ('layouts.default');
 });
 
+// หน้า home
 Route::get('/home', function () {
-    return view ('layouts.default');
+    return view('home');
 });
+
 
 
 Route::get("/mycontroller/{id?}",[MyController::class,'myfunction']);
