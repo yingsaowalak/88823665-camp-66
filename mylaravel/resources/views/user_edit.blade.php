@@ -10,8 +10,12 @@
     <div class="card">
       <div class="card-body register-card-body">
         <p class="register-box-msg">Register a new membership</p>
-        <form action="{{url('/register')}}" method="post">
+        <form action="{{url('/user')}}" method="post">
             @csrf
+            @method('put')
+            <input type="hidden" name ="id"
+            value="{{ $user->id}}">
+            
           <div class="input-group mb-3">
             <input type="text" name="name" class="form-control" placeholder="Full Name" />
             <div class="input-group-text"><span class="bi bi-person"></span></div>

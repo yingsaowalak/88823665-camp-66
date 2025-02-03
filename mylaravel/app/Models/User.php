@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
+    protected $fillable = [ /*user สามารถ insert อะไรได้บ้าง*/
         'name',
         'email',
         'password',
@@ -28,9 +28,9 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $hidden = [
+    protected $hidden = [ /*ซ่อนข้อมูล */
         'password',
-        'remember_token',
+        'remember_token', /*เป็นข้อมูลที่จำใส่ไว้ในคุ้กกี้ */
     ];
 
     /**
@@ -42,7 +42,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'password' => 'hashed', /*แก้ข้อมูล ไม่สามารถเปลื่ยนเป็นข้อมูลเดิมได้ */
         ];
     }
 }
