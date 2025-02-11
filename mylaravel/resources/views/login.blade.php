@@ -10,10 +10,20 @@
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Sign in to start your session</p>
-                    <form action="../index3.html" method="post">
+                    <?php
+                    $error = session() -> get(key : 'error');
+                    if($error){
+                        ?>
+                        <div class= "text-danger">
+                            {{$error}}
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    <form action="{{ url (path: '/login')}}" method="post">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="email" name= "email" class="form-control" placeholder="Email" />
+                            <input type="email" name= "email" value="{{ isset($email) ? $email : "" }}" class="form-control" placeholder="Email" />
                             <div class="input-group-text"><span class="bi bi-envelope"></span></div>
                         </div>
                         <div class="input-group mb-3">
