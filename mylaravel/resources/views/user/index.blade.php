@@ -26,11 +26,11 @@
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     <a href="{{ url('/user/' . $user->id) }}" class="btn btn-warning">Edit</a>
-                                    <form action="{{ url('/user') }}" method="post" style="display: inline;" onsubmit="return confirmDelete(event, this)">
+                                    <form action="{{ url('/user/')}}" method="post" style="display: inline" onsubmit="return clickme(this);">
                                         @csrf
-                                        @method('delete')
-                                        <input type="hidden" name="id" value="{{ $user->id }}">
-                                        <button type="submit" class="btn btn-danger" onclick="confirmDelete()" >Delete</button>
+                                    <input type="hidden" name="id" value="{{ $user->id}}">
+                                    <button class="btn btn-danger" >Delete</button>
+                                    @method('delete')
                                     </form>
                                 </td>
                             </tr>
@@ -56,33 +56,41 @@
 
 @section('scripts')
 <script>
-//function clickme() {
-   // Swal.fire({
-       // title: "Hello!",
-        //text: "This is a test alert.",
-       // icon: "info",
-       // confirmButtonText: "OK"
-   // });
-//}
-
-
-
-function confirmDelete(event, form) {
-    event.preventDefault(); // ป้องกันการ submit ฟอร์มทันที
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            form.submit(); // ทำการ submit ฟอร์มเมื่อกด "Yes"
-        }
+    function clickme(form) {
+        const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger"
+  },
+  buttonsStyling: false
+});
+swalWithBootstrapButtons.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonText: "Yes, delete it!",
+  cancelButtonText: "No, cancel!",
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    swalWithBootstrapButtons.fire({
+      title: "Deleted!",
+      text: "Your user has been deleted.",
+      icon: "success"
     });
-}
-
+    form.submit();
+  } else if (
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire({
+      title: "Cancelled",
+      text: "Your user is safe :)",
+      icon: "error"
+    });
+  }
+});
+        return false;
+    }
 </script>
 @endsection
