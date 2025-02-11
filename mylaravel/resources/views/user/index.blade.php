@@ -1,4 +1,5 @@
 @extends('layouts.default_with_menu')
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -18,29 +19,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($users as $index => $user) { ?>
+                            @foreach ($users as $index => $user)
                             <tr class="align-middle">
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
-                                    <a href="{{ url('/user/' .$user->id) }}">
-                                        <botton class="btn btn-warning">Edit</botton>
-                                    </a>
-                                    <form action="{{ url('/user') }}" method="post" style="display: inline;">
+                                    <a href="{{ url('/user/' . $user->id) }}" class="btn btn-warning">Edit</a>
+                                    <form action="{{ url('/user') }}" method="post" style="display: inline;" onsubmit="return confirmDelete(event, this)">
                                         @csrf
                                         @method('delete')
                                         <input type="hidden" name="id" value="{{ $user->id }}">
-                                        <button type="submit" class="btn btn-danger">Delete</botton>
+                                        <button type="submit" class="btn btn-danger" onclick="confirmDelete()" >Delete</button>
                                     </form>
                                 </td>
                             </tr>
-                            <?php } ?>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-[0:14]
-<!-- /.card-body -->
+                <!-- /.card-body -->
                 <div class="card-footer clearfix">
                     <ul class="pagination pagination-sm m-0 float-end">
                         <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
@@ -51,7 +49,40 @@
                     </ul>
                 </div>
             </div>
+            
         </div>
     </div>
+@endsection
 
+@section('scripts')
+<script>
+//function clickme() {
+   // Swal.fire({
+       // title: "Hello!",
+        //text: "This is a test alert.",
+       // icon: "info",
+       // confirmButtonText: "OK"
+   // });
+//}
+
+
+
+function confirmDelete(event, form) {
+    event.preventDefault(); // ป้องกันการ submit ฟอร์มทันที
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            form.submit(); // ทำการ submit ฟอร์มเมื่อกด "Yes"
+        }
+    });
+}
+
+</script>
 @endsection
