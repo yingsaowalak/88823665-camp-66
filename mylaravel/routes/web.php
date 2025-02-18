@@ -43,8 +43,14 @@ Route::get("/user/{id}", [UserController::class, 'edit']);
 Route::put("/user", [UserController::class, 'edit_action']);
 Route::delete("/user", [UserController::class, 'delete']);
 
+Route::get('/hello/{id?}',
+function ($val=""){
+    return "<h1>Hello WOrld $val</h1>";
+
+});
 
 Route::get('/mycontroller/{id?}',
     [MyController::class, 'myfunction']);
 Route::post('/mycontroller/{id?}',
     [MyController::class, 'MYFUNCTION']);
+
